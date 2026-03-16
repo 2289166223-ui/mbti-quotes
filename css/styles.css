@@ -1,0 +1,508 @@
+/* ========================================
+   MBTI Quotes - Pixel Style CSS
+   ======================================== */
+
+/* CSS Variables for Themes */
+:root {
+    --primary-color: #ff6b6b;
+    --primary-dark: #cc5555;
+    --primary-light: #ff8a8a;
+    --bg-color: #1a1a2e;
+    --bg-secondary: #16213e;
+    --text-color: #ffffff;
+    --text-secondary: #b8b8b8;
+    --card-bg: #0f0f23;
+    --border-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Theme: Red (Default) */
+[data-theme="red"] {
+    --primary-color: #ff6b6b;
+    --primary-dark: #cc5555;
+    --primary-light: #ff8a8a;
+}
+
+/* Theme: Yellow */
+[data-theme="yellow"] {
+    --primary-color: #ffd93d;
+    --primary-dark: #ccad31;
+    --primary-light: #ffe566;
+}
+
+/* Theme: Blue */
+[data-theme="blue"] {
+    --primary-color: #6bcbff;
+    --primary-dark: #55a2cc;
+    --primary-light: #8ad6ff;
+}
+
+/* Theme: Green - 抹茶绿 */
+[data-theme="green"] {
+    --primary-color: #a8c686;
+    --primary-dark: #7d9a5a;
+    --primary-light: #c4dba0;
+}
+
+/* Theme: White */
+[data-theme="white"] {
+    --primary-color: #ffffff;
+    --primary-dark: #cccccc;
+    --primary-light: #ffffff;
+    --bg-color: #2a2a4e;
+    --text-color: #ffffff;
+}
+
+/* Theme: Purple */
+[data-theme="purple"] {
+    --primary-color: #b16bff;
+    --primary-dark: #8d55cc;
+    --primary-light: #c48aff;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'ZCOOL QingKe HuangYou', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 统一像素字体 - 中英文都使用 ZCOOL QingKe HuangYou */
+.pixel-font {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 4px solid var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.title {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    text-shadow:
+        4px 4px 0 var(--primary-dark),
+        -2px -2px 0 var(--bg-secondary);
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+}
+
+/* Theme Selector */
+.theme-selector {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.theme-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.theme-colors {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 10px;
+}
+
+.theme-btn {
+    width: 30px;
+    height: 30px;
+    border: 3px solid var(--border-color);
+    cursor: pointer;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -o-transition: transform 0.2s;
+    transition: transform 0.2s;
+    -webkit-box-shadow: 3px 3px 0 var(--shadow-color);
+    box-shadow: 3px 3px 0 var(--shadow-color);
+}
+
+.theme-btn:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.theme-btn:active {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+    -webkit-box-shadow: 1px 1px 0 var(--shadow-color);
+    box-shadow: 1px 1px 0 var(--shadow-color);
+}
+
+.theme-btn[data-theme="red"] { background-color: #ff6b6b; }
+.theme-btn[data-theme="yellow"] { background-color: #ffd93d; }
+.theme-btn[data-theme="blue"] { background-color: #6bcbff; }
+.theme-btn[data-theme="green"] { background-color: #a8c686; }
+.theme-btn[data-theme="white"] { background-color: #ffffff; }
+.theme-btn[data-theme="purple"] { background-color: #b16bff; }
+
+.theme-btn.active {
+    outline: 3px solid var(--text-color);
+    outline-offset: 2px;
+}
+
+/* MBTI Section */
+.mbti-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.mbti-group {
+    background-color: var(--bg-secondary);
+    border: 4px solid var(--primary-color);
+    padding: 15px;
+    box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+.group-title {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px dashed var(--primary-dark);
+}
+
+.mbti-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.mbti-btn {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 12px 8px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 3px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+.mbti-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+.mbti-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--shadow-color);
+}
+
+.mbti-btn.active {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    box-shadow: inset 3px 3px 0 var(--primary-dark);
+}
+
+/* Quote Section */
+.quote-section {
+    margin-bottom: 40px;
+}
+
+.quote-card {
+    background-color: var(--bg-secondary);
+    border: 4px solid var(--primary-color);
+    padding: 25px;
+    box-shadow: 8px 8px 0 var(--shadow-color);
+    text-align: center;
+}
+
+.type-info {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-dark);
+}
+
+.type-name {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.type-desc {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.quote-content {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.quote-wrapper {
+    text-align: center;
+}
+
+.quote-text {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    max-width: 600px;
+    margin-bottom: 15px;
+}
+
+.quote-source {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.refresh-btn {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 1rem;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: 3px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 4px 4px 0 var(--shadow-color);
+    margin-top: 15px;
+}
+
+.refresh-btn:hover:not(:disabled) {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--shadow-color);
+}
+
+.refresh-btn:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--shadow-color);
+}
+
+.refresh-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-icon {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.refresh-btn:hover:not(:disabled) .btn-icon {
+    transform: rotate(180deg);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 4px solid var(--primary-color);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .mbti-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .mbti-btn {
+        font-size: 0.85rem;
+        padding: 12px 8px;
+    }
+
+    .group-title {
+        font-size: 0.9rem;
+    }
+
+    .quote-text {
+        font-size: 1.05rem;
+    }
+
+    .quote-source {
+        font-size: 0.85rem;
+    }
+
+    .type-name {
+        font-size: 1.2rem;
+    }
+
+    .type-desc {
+        font-size: 0.9rem;
+    }
+
+    .theme-selector {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .theme-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .refresh-btn {
+        font-size: 0.95rem;
+        padding: 10px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 12px;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .mbti-buttons {
+        gap: 8px;
+    }
+
+    .mbti-btn {
+        font-size: 0.8rem;
+        padding: 10px 6px;
+    }
+
+    .quote-card {
+        padding: 15px;
+    }
+
+    .quote-content {
+        min-height: 120px;
+        padding: 15px;
+    }
+
+    .quote-text {
+        font-size: 1rem;
+    }
+
+    .quote-source {
+        font-size: 0.8rem;
+    }
+
+    .type-name {
+        font-size: 1.1rem;
+    }
+
+    .theme-btn {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+/* Pixel Animation */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.quote-card.loading .quote-text {
+    animation: blink 0.5s infinite;
+}
+
+/* Scanlines Effect (Optional) */
+.container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.3;
+}

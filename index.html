@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>无趣生活指南 | MBTI Quotes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 标题 -->
+        <header class="header">
+            <h1 class="title">无趣生活指南</h1>
+            <p class="subtitle">选择你的人格类型</p>
+        </header>
+
+        <!-- 主题色选择器 -->
+        <div class="theme-selector">
+            <span class="theme-label">主题色:</span>
+            <div class="theme-colors">
+                <button class="theme-btn" data-theme="red" title="红色"></button>
+                <button class="theme-btn" data-theme="yellow" title="黄色"></button>
+                <button class="theme-btn" data-theme="blue" title="蓝色"></button>
+                <button class="theme-btn" data-theme="green" title="绿色"></button>
+                <button class="theme-btn" data-theme="white" title="白色"></button>
+                <button class="theme-btn" data-theme="purple" title="紫色"></button>
+            </div>
+        </div>
+
+        <!-- MBTI 选择区域 -->
+        <div class="mbti-section">
+            <!-- 分析家 Analysts -->
+            <div class="mbti-group">
+                <h3 class="group-title">分析家 Analysts</h3>
+                <div class="mbti-buttons">
+                    <button class="mbti-btn" data-type="INTJ">INTJ</button>
+                    <button class="mbti-btn" data-type="INTP">INTP</button>
+                    <button class="mbti-btn" data-type="ENTJ">ENTJ</button>
+                    <button class="mbti-btn" data-type="ENTP">ENTP</button>
+                </div>
+            </div>
+
+            <!-- 外交家 Diplomats -->
+            <div class="mbti-group">
+                <h3 class="group-title">外交家 Diplomats</h3>
+                <div class="mbti-buttons">
+                    <button class="mbti-btn" data-type="INFJ">INFJ</button>
+                    <button class="mbti-btn" data-type="INFP">INFP</button>
+                    <button class="mbti-btn" data-type="ENFJ">ENFJ</button>
+                    <button class="mbti-btn" data-type="ENFP">ENFP</button>
+                </div>
+            </div>
+
+            <!-- 守护者 Sentinels -->
+            <div class="mbti-group">
+                <h3 class="group-title">守护者 Sentinels</h3>
+                <div class="mbti-buttons">
+                    <button class="mbti-btn" data-type="ISTJ">ISTJ</button>
+                    <button class="mbti-btn" data-type="ISFJ">ISFJ</button>
+                    <button class="mbti-btn" data-type="ESTJ">ESTJ</button>
+                    <button class="mbti-btn" data-type="ESFJ">ESFJ</button>
+                </div>
+            </div>
+
+            <!-- 探险家 Explorers -->
+            <div class="mbti-group">
+                <h3 class="group-title">探险家 Explorers</h3>
+                <div class="mbti-buttons">
+                    <button class="mbti-btn" data-type="ISTP">ISTP</button>
+                    <button class="mbti-btn" data-type="ISFP">ISFP</button>
+                    <button class="mbti-btn" data-type="ESTP">ESTP</button>
+                    <button class="mbti-btn" data-type="ESFP">ESFP</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 语录展示区域 -->
+        <div class="quote-section" id="quoteSection">
+            <div class="quote-card">
+                <div class="type-info">
+                    <span class="type-name" id="typeName">请选择你的MBTI类型</span>
+                    <span class="type-desc" id="typeDesc"></span>
+                </div>
+                <div class="quote-content">
+                    <div class="quote-wrapper">
+                        <p class="quote-text" id="quoteText">点击上方按钮开始探索</p>
+                        <p class="quote-source" id="quoteSource"></p>
+                    </div>
+                </div>
+                <button class="refresh-btn" id="refreshBtn" disabled>
+                    <span class="btn-icon">↻</span> 换一句
+                </button>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>每日更新 · Daily Refresh</p>
+        </footer>
+    </div>
+
+    <script src="js/quotes.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
