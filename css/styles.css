@@ -506,3 +506,150 @@ body {
     z-index: 1000;
     opacity: 0.3;
 }
+
+/* ========================================
+   像素小人和边牧狗动画
+   ======================================== */
+
+.pixel-walk-container {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.pixel-walker {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    animation: walk-across 12s linear infinite;
+    bottom: 8px;
+}
+
+/* 从左走到右的动画 */
+@keyframes walk-across {
+    0% {
+        left: -80px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* 像素小人 - 使用 box-shadow 绘制 */
+.pixel-person {
+    width: 4px;
+    height: 4px;
+    background: transparent;
+    position: relative;
+    animation: person-bounce 0.4s ease-in-out infinite;
+    /* 像素小人：头+身体+腿 */
+    box-shadow:
+        /* 头部 - 肤色 */
+        4px 0 0 #ffdbac,
+        8px 0 0 #ffdbac,
+        4px -4px 0 #ffdbac,
+        8px -4px 0 #ffdbac,
+        /* 头发 - 棕色 */
+        4px -8px 0 #4a3728,
+        8px -8px 0 #4a3728,
+        0px -4px 0 #4a3728,
+        12px -4px 0 #4a3728,
+        /* 身体 - 蓝色衣服 */
+        4px 4px 0 #5b8dd9,
+        8px 4px 0 #5b8dd9,
+        4px 8px 0 #5b8dd9,
+        8px 8px 0 #5b8dd9,
+        0px 4px 0 #5b8dd9,
+        12px 4px 0 #5b8dd9,
+        /* 腿 - 深蓝色裤子 */
+        4px 12px 0 #3d5a80,
+        8px 12px 0 #3d5a80,
+        4px 16px 0 #3d5a80,
+        8px 16px 0 #3d5a80,
+        /* 鞋子 - 棕色 */
+        4px 20px 0 #4a3728,
+        8px 20px 0 #4a3728;
+}
+
+/* 小人走路弹跳 */
+@keyframes person-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* 边牧小狗 - 黑白配色 */
+.pixel-dog {
+    width: 4px;
+    height: 4px;
+    background: transparent;
+    position: relative;
+    animation: dog-bounce 0.3s ease-in-out infinite;
+    margin-left: 10px;
+    /* 边牧狗：头+身体+腿+尾巴 */
+    box-shadow:
+        /* 头部 - 黑白 */
+        0px 0 0 #222222,
+        4px 0 0 #ffffff,
+        0px -4px 0 #222222,
+        4px -4px 0 #ffffff,
+        /* 耳朵 */
+        -4px -4px 0 #222222,
+        8px -4px 0 #222222,
+        /* 鼻子 */
+        4px 4px 0 #222222,
+        /* 身体 - 黑白斑纹 */
+        8px 0 0 #222222,
+        12px 0 0 #ffffff,
+        16px 0 0 #222222,
+        8px 4px 0 #ffffff,
+        12px 4px 0 #222222,
+        16px 4px 0 #ffffff,
+        /* 腿 */
+        8px 8px 0 #222222,
+        12px 8px 0 #ffffff,
+        16px 8px 0 #222222,
+        /* 尾巴 - 翘起来 */
+        20px 0 0 #ffffff,
+        24px -4px 0 #222222;
+}
+
+/* 小狗走路弹跳（稍快） */
+@keyframes dog-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+/* 响应式 - 移动端缩小角色 */
+@media (max-width: 768px) {
+    .pixel-walk-container {
+        height: 40px;
+    }
+
+    .pixel-walker {
+        transform: scale(0.8);
+        bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pixel-walk-container {
+        height: 35px;
+    }
+
+    .pixel-walker {
+        transform: scale(0.6);
+        bottom: 3px;
+    }
+}
