@@ -585,40 +585,49 @@ body {
     }
 }
 
-/* 边牧小狗 - 黑白配色 */
+/* 边牧小狗 - 黑白配色，侧面造型 */
 .pixel-dog {
     width: 4px;
     height: 4px;
     background: transparent;
     position: relative;
     animation: dog-bounce 0.3s ease-in-out infinite;
-    margin-left: 10px;
-    /* 边牧狗：头+身体+腿+尾巴 */
+    margin-left: 15px;
+    /* 边牧狗侧面：更像狗的造型 */
     box-shadow:
-        /* 头部 - 黑白 */
-        0px 0 0 #222222,
-        4px 0 0 #ffffff,
-        0px -4px 0 #222222,
+        /* 耳朵 - 竖起来 */
+        0px -12px 0 #222222,
+        4px -12px 0 #222222,
+        /* 头顶 */
+        0px -8px 0 #222222,
+        4px -8px 0 #ffffff,
+        8px -8px 0 #222222,
+        /* 脸部 */
+        0px -4px 0 #ffffff,
         4px -4px 0 #ffffff,
-        /* 耳朵 */
-        -4px -4px 0 #222222,
         8px -4px 0 #222222,
         /* 鼻子 */
-        4px 4px 0 #222222,
-        /* 身体 - 黑白斑纹 */
-        8px 0 0 #222222,
-        12px 0 0 #ffffff,
-        16px 0 0 #222222,
+        -4px -4px 0 #222222,
+        /* 脖子和身体上部 */
+        8px 0 0 #ffffff,
+        12px 0 0 #222222,
+        16px 0 0 #ffffff,
+        20px 0 0 #222222,
+        /* 身体下部 - 肚子 */
         8px 4px 0 #ffffff,
-        12px 4px 0 #222222,
-        16px 4px 0 #ffffff,
-        /* 腿 */
-        8px 8px 0 #222222,
-        12px 8px 0 #ffffff,
-        16px 8px 0 #222222,
-        /* 尾巴 - 翘起来 */
-        20px 0 0 #ffffff,
-        24px -4px 0 #222222;
+        12px 4px 0 #ffffff,
+        16px 4px 0 #222222,
+        20px 4px 0 #222222,
+        /* 前腿 */
+        8px 8px 0 #ffffff,
+        8px 12px 0 #ffffff,
+        /* 后腿 */
+        20px 8px 0 #222222,
+        20px 12px 0 #222222,
+        /* 尾巴 - 向上翘 */
+        24px 0 0 #222222,
+        28px -4px 0 #ffffff,
+        28px -8px 0 #222222;
 }
 
 /* 小狗走路弹跳（稍快） */
